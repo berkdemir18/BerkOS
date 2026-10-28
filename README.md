@@ -16,6 +16,10 @@ Google TV için sakin bir ana ekran. Google TV'nin reklam ve öneri dolu ana ekr
 
 ## Kurulum (5 dakika)
 
+**Bilgisayarın yok mu?** Sadece TV ve kumandayla: [kolay kurulum rehberi](https://berkdemir18.github.io/BerkOS/kolay-kurulum/). TV'deki Downloader uygulamasına `berkdemir18.github.io/BerkOS/tv` yazman yeterli.
+
+Bilgisayarla:
+
 1. **TV'de:** Ayarlar › Sistem › Hakkında › *Android TV OS derlemesi*'ne 7 kez bas. Sonra Geliştirici seçenekleri › *USB hata ayıklama*'yı aç. TV'nin IP adresini Ayarlar › Ağ'dan not et.
 2. **Bilgisayarda** (TV ile aynı Wi-Fi'da): zip'i çıkar, `BerkOS'u TV'ye Kur.bat`'a çift tıkla, IP'yi yaz.
 3. TV "USB hata ayıklamaya izin verilsin mi?" derse *Her zaman izin ver*.

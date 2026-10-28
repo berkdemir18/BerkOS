@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BerkOS İndir</title>
+<meta name="description" content="BerkOS ve Radyo'yu doğrudan TV'ye indir. Downloader uygulamasında bu adresi aç, kumandayla butona bas.">
+<link rel="icon" href="../img/ikon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--zemin:#120F0C;--kart:#1E1813;--murekkep:#F3ECE0;--soluk:#BDB3A3;--pirinc:#E3BC78;--pirinc2:#F6DDA8}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:radial-gradient(70% 80% at 50% 0%,#2a2119,var(--zemin) 70%);color:var(--murekkep);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;align-items:center;justify-content:center;padding:4vh 5vw}
+.kutu{width:100%;max-width:1100px;text-align:center}
+.marka{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:3vh}
+.marka img{height:64px}
+.marka span{font-family:"Instrument Serif",Georgia,serif;font-size:60px;line-height:1}
+p.alt{color:var(--soluk);font-size:24px;margin-bottom:5vh}
+.dugmeler{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+a{display:block;text-decoration:none;color:inherit;background:var(--kart);border:3px solid rgba(227,188,120,.18);border-radius:24px;padding:36px 28px;outline:none;transition:transform .15s,border-color .15s,background .15s}
+a b{display:block;font-size:34px;margin-bottom:8px}
+a small{display:block;color:var(--soluk);font-size:20px}
+a.ana{background:var(--pirinc);color:#1B140C;border-color:var(--pirinc)}
+a.ana small{color:#4A3A22}
+a:focus,a:hover{transform:scale(1.04);border-color:var(--pirinc2)}
+a.ana:focus,a.ana:hover{background:var(--pirinc2)}
+.not{margin-top:5vh;color:var(--soluk);font-size:20px;line-height:1.5}
+.not a{display:inline;padding:0;border:0;background:none;color:var(--pirinc);text-decoration:underline}
+@media (max-width:700px){.dugmeler{grid-template-columns:1fr}.marka span{font-size:44px}a b{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="kutu">
+  <div class="marka"><img src="../img/logo.svg" alt=""><span>BerkOS</span></div>
+  <p class="alt">Kumandayla butona gel, Tamam'a bas. İndirince "Yükle" de.</p>
+  <div class="dugmeler">
+    <a class="ana" href="https://github.com/berkdemir18/BerkOS/releases/latest/download/BerkOS.apk" autofocus><b>1 · BerkOS</b><small>Ana ekran · 17 MB</small></a>
+    <a href="https://github.com/berkdemir18/BerkOS/releases/latest/download/BerkOS-Radyo.apk"><b>2 · Radyo</b><small>İsteğe bağlı · 1,4 MB</small></a>
+  </div>
+  <p class="not">Kurduktan sonraki iki adım için telefondan aç: <a href="../kolay-kurulum/">berkdemir18.github.io/BerkOS/kolay-kurulum</a></p>
+</div>
+<script>
+// Bazı TV tarayıcıları autofocus'u yok sayıyor: ilk butona odak ver ki kumanda hemen çalışsın.
+try { document.querySelector("a.ana").focus(); } catch (e) {}
+</script>
+</body>
+</html>
