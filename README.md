@@ -16,7 +16,7 @@ Google TV için sakin bir ana ekran. Google TV'nin reklam ve öneri dolu ana ekr
 
 ## Kurulum (5 dakika)
 
-**Bilgisayarın yok mu?** Sadece TV ve kumandayla: [kolay kurulum rehberi](https://berkdemir18.github.io/BerkOS/kolay-kurulum/). TV'deki Downloader uygulamasına `berkdemir18.github.io/BerkOS/tv` yazman yeterli.
+**Bilgisayarın yok mu?** Sadece TV ve kumandayla: [kolay kurulum rehberi](https://berkdemir18.github.io/BerkOS/kolay-kurulum/). TV'deki Downloader uygulamasına `berkdemir18.github.io/BerkOS/tv` yazman yeterli (büyük harfler önemli).
 
 Bilgisayarla:
 
