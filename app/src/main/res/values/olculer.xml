@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Aşağı inince üstte duran saat / ezan / hava çubuğunun yüksekliği; satırlar bunun altından kayar -->
+    <dimen name="ust_cubuk">118dp</dimen>
+</resources>

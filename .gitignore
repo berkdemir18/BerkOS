@@ -1,0 +1,8 @@
+.gradle/
+build/
+app/build/
+local.properties
+salon.jks
+imza.properties
+dist/
+kurulum/platform-tools/

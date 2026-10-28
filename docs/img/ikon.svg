@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="z" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#231C15"/><stop offset="1" stop-color="#120F0C"/></linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="230" fill="url(#z)"/>
+  <rect x="3" y="3" width="1018" height="1018" rx="227" fill="none" stroke="#E3BC78" stroke-opacity=".18" stroke-width="6"/>
+  <g transform="translate(262 182) scale(.806)">
+  <defs>
+    <linearGradient id="ldik" x1="65" y1="240" x2="192" y2="568" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F6DDA8"/><stop offset="1" stop-color="#E3BC78"/>
+    </linearGradient>
+    <linearGradient id="lust" x1="70" y1="180" x2="470" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6E4A1E"/><stop offset="1" stop-color="#F1D29A"/>
+    </linearGradient>
+    <linearGradient id="lalt" x1="70" y1="640" x2="500" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6E4A1E"/><stop offset="1" stop-color="#F1D29A"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#ldik)" d="M65,240 L192,240 L192,500 L65,568 Z"/>
+  <path fill="url(#lust)" d="M65,55 L425,130 C500,146 540,200 540,272 C540,340 520,392 500,425 L190,318 C150,293 105,256 65,248 Z"/>
+  <path fill="url(#lalt)" d="M65,770 L445,695 C515,680 556,625 556,562 C556,495 530,440 490,404 C465,392 435,392 405,402 L190,492 C150,505 105,535 65,562 Z"/>
+  <path fill="#16120E" d="M190,318 L405,401 L190,492 Z"/>
+</g>
+</svg>

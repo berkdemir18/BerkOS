@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Kartların dizildiği yatay satırı işaretler (sağa/sola basınca satırdan çıkmasın diye) -->
+    <item name="satir" type="id" />
+    <item name="raf" type="id" />
+    <!-- Şeritteki kutunun uygulama paketi (taşıma modunda yeni sıra bundan okunur) -->
+    <item name="paket" type="id" />
+</resources>
+

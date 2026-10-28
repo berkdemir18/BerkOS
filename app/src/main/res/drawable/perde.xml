@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Duvar resminin üstüne: yazılar her tabloda okunsun diye hafif genel karartma + üstte ve altta yumuşak gölge -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="#0A000000" />
+        </shape>
+    </item>
+    <item android:gravity="top" android:height="360dp">
+        <shape>
+            <gradient
+                android:angle="270"
+                android:centerColor="#2E000000"
+                android:centerY="0.45"
+                android:endColor="#00000000"
+                android:startColor="#8C000000" />
+        </shape>
+    </item>
+    <item android:gravity="bottom" android:height="230dp">
+        <shape>
+            <gradient
+                android:angle="90"
+                android:centerColor="#2E000000"
+                android:endColor="#00000000"
+                android:startColor="#99000000" />
+        </shape>
+    </item>
+</layer-list>

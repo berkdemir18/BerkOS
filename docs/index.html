@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BerkOS — Google TV için ana ekran</title>
+<meta name="description" content="BerkOS, Google TV'nin reklam dolu ana ekranı yerine saat, hava, maçlar ve tablolarla gelen sakin bir ana ekran. Ücretsiz, hesap istemez.">
+<meta property="og:title" content="BerkOS — televizyonun ana ekranı, sakin hâliyle">
+<meta property="og:description" content="Saat, hava, maçlar, kaldığın yer ve boşta dönen tablolar. Google TV için ücretsiz ana ekran.">
+<meta property="og:image" content="https://berkdemir18.github.io/berkos/img/og.jpg">
+<meta name="theme-color" content="#120F0C">
+<link rel="icon" href="img/ikon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --zemin:#120F0C; --zemin2:#1A1511; --kart:#211B15; --cizgi:rgba(227,188,120,.16);
+  --murekkep:#F3ECE0; --soluk:#BDB3A3; --sonuk:#8A8070; --pirinc:#E3BC78; --pirinc2:#F6DDA8;
+  --serif:"Instrument Serif",Georgia,serif; --sans:"Manrope",system-ui,sans-serif;
+  --gen:min(1180px,calc(100vw - 32px));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--zemin);color:var(--murekkep);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.gen{width:var(--gen);margin:0 auto}
+
+/* üst çubuk */
+.ust{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(18,15,12,.72);border-bottom:1px solid var(--cizgi)}
+.ust .gen{display:flex;align-items:center;justify-content:space-between;height:64px}
+.marka{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--serif);font-size:28px;letter-spacing:.2px}
+.marka img{width:22px;height:auto}
+.ust nav{display:flex;gap:28px;align-items:center;font-size:15px;color:var(--soluk)}
+.ust nav a{text-decoration:none;transition:color .2s}
+.ust nav a:hover{color:var(--murekkep)}
+.dugme{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:15px;text-decoration:none;border-radius:999px;padding:12px 22px;transition:transform .2s,background .2s,box-shadow .2s;white-space:nowrap}
+.dugme.ana{background:var(--pirinc);color:#1B140C;box-shadow:0 8px 30px -10px rgba(227,188,120,.6)}
+.dugme.ana:hover{background:var(--pirinc2);transform:translateY(-1px)}
+.dugme.ikinci{border:1px solid var(--cizgi);color:var(--murekkep)}
+.dugme.ikinci:hover{border-color:rgba(227,188,120,.45)}
+.ust .dugme{padding:9px 18px;font-size:14px}
+
+/* giriş */
+.giris{padding:88px 0 40px;text-align:center;position:relative}
+.giris::before{content:"";position:absolute;inset:-120px 0 auto;height:620px;background:radial-gradient(60% 60% at 50% 30%,rgba(227,188,120,.13),transparent 70%);pointer-events:none}
+.ufak{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--pirinc)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(48px,8.4vw,112px);line-height:.98;letter-spacing:-.01em;margin:18px auto 22px;max-width:12ch}
+h1 em{color:var(--pirinc2)}
+.giris p.alt{font-size:clamp(17px,2vw,20px);color:var(--soluk);max-width:620px;margin:0 auto 34px}
+.giris .dugmeler{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.not{margin-top:16px;font-size:13px;color:var(--sonuk)}
+
+/* televizyon */
+.tv{width:var(--gen);margin:56px auto 0;position:relative}
+.tv .cerceve{border-radius:18px;padding:10px;background:linear-gradient(#2a241e,#15110d);box-shadow:0 60px 120px -40px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.05) inset}
+.tv img{border-radius:10px;width:100%;aspect-ratio:16/9;object-fit:cover}
+.tv .ayak{width:22%;height:14px;margin:0 auto;background:linear-gradient(#1d1814,#0d0b09);border-radius:0 0 10px 10px}
+.tv .isik{position:absolute;inset:8% 6% -4%;z-index:-1;background:radial-gradient(closest-side,rgba(227,188,120,.22),transparent);filter:blur(40px)}
+
+/* bölümler */
+section{padding:120px 0 0}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5.4vw,64px);line-height:1.04;letter-spacing:-.005em;max-width:16ch}
+h2 em{color:var(--pirinc2)}
+.bas{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:44px}
+.bas p{color:var(--soluk);max-width:480px;justify-self:end}
+
+.ikili{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.ikili.ters{grid-template-columns:1fr 1.25fr}
+.ikili.ters .gorsel{order:2}
+.gorsel{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.06);box-shadow:0 40px 90px -40px rgba(0,0,0,.9)}
+.gorsel img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.yazi h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,42px);line-height:1.08;margin:12px 0 16px}
+.yazi p{color:var(--soluk)}
+.yazi ul{list-style:none;margin-top:20px;display:grid;gap:10px}
+.yazi li{padding-left:22px;position:relative;color:var(--murekkep)}
+.yazi li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--pirinc);transform:rotate(45deg)}
+
+/* özellik ızgarası */
+.izgara{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--cizgi);border:1px solid var(--cizgi);border-radius:16px;overflow:hidden}
+.ozellik{background:var(--zemin);padding:30px 28px 32px}
+.ozellik .sembol{font-family:var(--serif);font-size:34px;color:var(--pirinc);line-height:1;height:38px}
+.ozellik h4{font-size:17px;font-weight:700;margin:16px 0 6px}
+.ozellik p{font-size:15px;color:var(--soluk)}
+
+/* sergi */
+.sergi{position:relative;border-radius:18px;overflow:hidden;min-height:560px;display:flex;align-items:flex-end}
+.sergi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kenburns 40s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.1) translate(-1.5%,-1%)}}
+.sergi::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,15,12,0) 30%,rgba(18,15,12,.9))}
+.sergi .icerik{position:relative;z-index:1;padding:48px;display:flex;justify-content:space-between;align-items:flex-end;gap:32px;width:100%;flex-wrap:wrap}
+.sergi .saat{font-family:var(--serif);font-size:clamp(64px,9vw,120px);line-height:.9}
+.sergi .kunye{text-align:right;color:var(--soluk);font-size:14px}
+.sergi .kunye b{display:block;font-family:var(--serif);font-weight:400;font-style:italic;font-size:26px;color:var(--murekkep)}
+.sergi-alt{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:36px}
+.sergi-alt b{font-family:var(--serif);font-weight:400;font-size:44px;color:var(--pirinc2);display:block;line-height:1}
+.sergi-alt span{color:var(--soluk);font-size:15px}
+
+/* kurulum */
+.adimlar{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:a}
+.adim{background:var(--zemin2);border:1px solid var(--cizgi);border-radius:16px;padding:30px 28px;counter-increment:a}
+.adim::before{content:counter(a);font-family:var(--serif);font-size:56px;line-height:1;color:var(--pirinc)}
+.adim h4{font-size:18px;font-weight:700;margin:14px 0 8px}
+.adim p{color:var(--soluk);font-size:15px}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:rgba(227,188,120,.1);color:var(--pirinc2);padding:2px 7px;border-radius:6px}
+
+/* sss */
+details{border-bottom:1px solid var(--cizgi);padding:22px 0}
+details:first-of-type{border-top:1px solid var(--cizgi)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-size:18px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--serif);font-size:30px;line-height:.8;color:var(--pirinc);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--soluk);margin-top:12px;max-width:760px}
+
+/* indir */
+.indir{margin:140px auto 0;text-align:center;padding:90px 24px;border-radius:24px;background:radial-gradient(80% 120% at 50% 0%,rgba(227,188,120,.16),transparent 70%),var(--zemin2);border:1px solid var(--cizgi)}
+.indir img{width:64px;margin:0 auto 26px}
+.indir h2{margin:0 auto 16px}
+.indir p{color:var(--soluk);margin-bottom:32px}
+
+footer{padding:64px 0 48px;color:var(--sonuk);font-size:14px}
+footer .gen{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid var(--cizgi);padding-top:28px}
+
+/* beliriş */
+.belir{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.belir.gorundu{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.belir{opacity:1;transform:none;transition:none}.sergi img{animation:none}html{scroll-behavior:auto}}
+
+@media (max-width:900px){
+  .ust nav a.gizle{display:none}
+  .bas,.ikili,.ikili.ters{grid-template-columns:1fr;gap:28px}
+  .ikili.ters .gorsel{order:0}
+  .bas p{justify-self:start}
+  .izgara,.adimlar,.sergi-alt{grid-template-columns:1fr}
+  section{padding-top:88px}
+  .sergi{min-height:420px}
+  .sergi .icerik{padding:28px}
+  .sergi .kunye{text-align:left}
+  .giris{padding-top:64px}
+  .tv .cerceve{padding:5px;border-radius:12px}
+  .tv img{border-radius:8px}
+}
+@media (max-width:520px){.ust nav{gap:14px}.ust nav a:not(.dugme){display:none}}
+</style>
+</head>
+<body>
+
+<header class="ust">
+  <div class="gen">
+    <a class="marka" href="#"><img src="img/logo.svg" alt="">BerkOS</a>
+    <nav>
+      <a class="gizle" href="#neler">Neler var</a>
+      <a class="gizle" href="#sergi">Sergi</a>
+      <a href="#kurulum">Kurulum</a>
+      <a class="dugme ana" href="#indir">İndir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="giris gen">
+    <div class="ufak">Google TV için ana ekran</div>
+    <h1>Televizyonun, <em>sakin</em> hâliyle.</h1>
+    <p class="alt">BerkOS, Google TV'nin reklam ve öneri dolu ana ekranının yerine geçer. Açınca saat, hava, bugünün maçları ve kaldığın yer. Gerisi duvarda asılı bir tablo.</p>
+    <div class="dugmeler">
+      <a class="dugme ana" href="#indir">APK'yı indir</a>
+      <a class="dugme ikinci" href="#kurulum">Nasıl kurulur?</a>
+    </div>
+    <div class="not">Ücretsiz · hesap istemez · reklam yok · Android TV 8 ve üstü</div>
+  </div>
+
+  <div class="tv belir">
+    <div class="isik"></div>
+    <div class="cerceve"><img src="img/ana-ekran.webp" alt="BerkOS ana ekranı: büyük saat, tarih, İstanbul hava durumu, üç Süper Lig maçı ve alt kısımda cam bir uygulama çubuğu" width="1920" height="1080" fetchpriority="high"></div>
+    <div class="ayak"></div>
+  </div>
+
+  <section id="neler" class="gen">
+    <div class="bas belir">
+      <h2>Açınca ne görüyorsan, <em>o kadar.</em></h2>
+      <p>Bilgi az, ekran ferah. Kumandada aşağı inersen kaldığın diziler ve videolar gelir; inmezsen ekran bir tablo olarak kalır.</p>
+    </div>
+
+    <div class="ikili belir">
+      <div class="gorsel"><img src="img/satirlar.webp" alt="İzlemeye devam et satırı ve izlenen YouTube kanallarından yeni videolar" loading="lazy" width="1920" height="1080"></div>
+      <div class="yazi">
+        <div class="ufak">Satırlar</div>
+        <h3>Kaldığın yerden, hangi uygulamada olursa.</h3>
+        <p>Netflix, YouTube ve diğerlerinde yarım bıraktığın şeyler tek satırda. Karta bas, doğrudan kaldığı saniyeden açılsın.</p>
+        <ul>
+          <li>İzlemeye devam et, uygulama fark etmeksizin</li>
+          <li>Takip ettiğin YouTube kanallarından yeni videolar</li>
+          <li>Netflix'te Türkiye'de bu hafta ilk 10</li>
+          <li>Satırları sırala, istemediğini kapat</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="gen">
+    <div class="ikili ters belir">
+      <div class="gorsel"><img src="img/mac-detay.webp" alt="Beşiktaş – Başakşehir maç detayı: saat, kanal, stadyum, son beş maç ve puan durumu" loading="lazy" width="1920" height="1080"></div>
+      <div class="yazi">
+        <div class="ufak">Maçlar</div>
+        <h3>Maç günü ana ekranda, canlı skor dahil.</h3>
+        <p>Süper Lig'de büyüklerin maçları saati ve kanalıyla ana ekranda. Maç başlayınca kart canlıya döner, skor işler. Karta basınca kadrolar, son beş maç, aralarındaki geçmiş ve puan durumu.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gen">
+    <div class="izgara belir">
+      <div class="ozellik"><div class="sembol">20:09</div><h4>Saat ve tarih</h4><p>Büyük, okunaklı, odanın öbür ucundan bile.</p></div>
+      <div class="ozellik"><div class="sembol">14°</div><h4>Hava durumu</h4><p>Bulunduğun şehrin anlık derecesi, günün en yükseği ve en düşüğü. Anahtar, hesap yok.</p></div>
+      <div class="ozellik"><div class="sembol">◐</div><h4>Şehrini seç</h4><p>İlk açılışta yaklaşık şehrini kendisi bulur. Ayarlar › Şehir'den 81 ilden istediğini seç.</p></div>
+      <div class="ozellik"><div class="sembol">▭</div><h4>Cam uygulama çubuğu</h4><p>Sık açtıkların altta. Basılı tut, taşı ya da kaldır.</p></div>
+      <div class="ozellik"><div class="sembol">▣</div><h4>Duvar resmini sen seç</h4><p>Ana ekranın arkasındaki tabloyu listeden seç ya da tek tuşla sıradakine geç.</p></div>
+      <div class="ozellik"><div class="sembol">✕</div><h4>Arka planı temizle</h4><p>Arkada açık kalan uygulamaları tek tuşla kapat, TV rahatlasın.</p></div>
+    </div>
+  </section>
+
+  <section id="sergi" class="gen">
+    <div class="bas belir">
+      <h2>Kimse izlemiyorken, <em>duvarda bir tablo.</em></h2>
+      <p>TV boşta kalınca Sergi açılır: Osmanlı İstanbul'undan Japon baskılarına, Monet'den James Webb'in uzay fotoğraflarına. Hepsi kamu malı, hepsi künyesiyle.</p>
+    </div>
+    <div class="sergi belir">
+      <img src="img/sergi.webp" alt="Fausto Zonaro'nun Boğaz Kıyısında tablosu" loading="lazy">
+      <div class="icerik">
+        <div class="saat">21:30</div>
+        <div class="kunye"><b>Boğaz Kıyısında</b>Fausto Zonaro · 1900'ler</div>
+      </div>
+    </div>
+    <div class="sergi-alt belir">
+      <div><b>39</b><span>eser uygulamanın içinde, internet olmasa da döner</span></div>
+      <div><b>130+</b><span>eser zamanla kendiliğinden iner</span></div>
+      <div><b>0</b><span>reklam. Gerçekten sıfır.</span></div>
+    </div>
+  </section>
+
+  <section id="kurulum" class="gen">
+    <div class="bas belir">
+      <h2>Kurulum, <em>beş dakika.</em></h2>
+      <p>Play Store'da yok, APK olarak kuruluyor. Bilgisayar ve TV aynı Wi-Fi'da olsun, gerisini script hallediyor.</p>
+    </div>
+    <div class="adimlar belir">
+      <div class="adim"><h4>TV'de geliştirici modunu aç</h4><p>Ayarlar › Sistem › Hakkında › <b>Android TV OS derlemesi</b>'ne 7 kez bas. Sonra Geliştirici seçenekleri › <b>USB hata ayıklama</b>'yı aç.</p></div>
+      <div class="adim"><h4>Kurulum paketini indir</h4><p>Aşağıdaki zip'i bilgisayara indir, klasöre çıkar. TV'nin IP adresini Ayarlar › Ağ'dan not et.</p></div>
+      <div class="adim"><h4>Çift tıkla, IP'yi yaz</h4><p><code>BerkOS'u TV'ye Kur.bat</code>'ı çalıştır. TV "izin verilsin mi" derse "her zaman izin ver". Bitti, Ev tuşu artık BerkOS'u açar.</p></div>
+    </div>
+  </section>
+
+  <section class="gen">
+    <h2 class="belir" style="margin-bottom:36px">Soranlar oldu.</h2>
+    <div class="belir">
+      <details><summary>Google TV'yi bozar mı? Geri dönebilir miyim?</summary><p>Bozmaz. BerkOS sistemin ana ekranını silmez, sadece önüne geçer. Ayarlardan "Google TV ana ekranını aç" ile istediğin an eskisine dönersin; tamamen kaldırmak için paketteki <code>BerkOS'u Kaldir.bat</code> yeter.</p></details>
+      <details><summary>Neden erişilebilirlik izni istiyor?</summary><p>Ev tuşuna basınca Google TV kendi ekranını açıyor; BerkOS bunu fark edip öne geçebilmek için "Ev tuşu yardımcısı"nı kullanıyor. Google TV ekranındayken sadece "İzlemeye devam edin" başlıklarını okuyor. Başka uygulamaların ekranını okumuyor, hiçbir yere bir şey göndermiyor.</p></details>
+      <details><summary>Hangi cihazlarda çalışır?</summary><p>Android TV 8 ve üstü. Google TV Streamer'da günlük kullanımda, Google TV 14 emülatöründe test edildi. Chromecast with Google TV ve Android TV'li televizyonlarda da çalışması beklenir; sorun yaşarsan yaz.</p></details>
+      <details><summary>Ücretli mi, hesap gerekiyor mu?</summary><p>Hayır ve hayır. Hava ve maç bilgisi anahtarsız açık kaynaklardan geliyor. Ne giriş ne takip ne reklam.</p></details>    </div>
+  </section>
+
+  <div class="gen">
+    <div class="indir belir" id="indir">
+      <img src="img/logo.svg" alt="BerkOS logosu">
+      <h2>Kumandayı al, <em>dene.</em></h2>
+      <p>BerkOS 1.1 · APK + kurulum paketi · Android TV 8+</p>
+      <div class="dugmeler" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a class="dugme ana" href="https://github.com/berkdemir18/berkos/releases/latest/download/BerkOS-Kurulum.zip">Kurulum paketini indir</a>
+        <a class="dugme ikinci" href="https://github.com/berkdemir18/berkos/releases/latest/download/BerkOS.apk">Sadece APK</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="gen">
+    <span>BerkOS · <a href="https://github.com/berkdemir18/berkos">Kaynak kod</a></span>
+    <span>Tablolar kamu malı (Wikimedia Commons, NASA). Uygulama logoları sahiplerine aittir.</span>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('gorundu');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.belir').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

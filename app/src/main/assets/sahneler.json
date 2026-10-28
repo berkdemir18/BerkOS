@@ -1,0 +1,255 @@
+{
+ "lisans": "Görüntü ve sesler: Mixkit Free License (https://mixkit.co/license/)",
+ "sahneler": [
+  {
+   "id": "m2707",
+   "ad": "Yılbaşı şöminesi",
+   "kat": "Şömine",
+   "video": "https://assets.mixkit.co/videos/2707/2707-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/2707/2707-thumb-720-0.jpg",
+   "kaynak": "Mixkit · A fireplace lit at Christmas time",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2653/2653-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m1242",
+   "ad": "Odun şöminesi",
+   "kat": "Şömine",
+   "video": "https://assets.mixkit.co/videos/1242/1242-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/1242/1242-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Wood burning in a fireplace",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2653/2653-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m30252",
+   "ad": "Çıtırdayan şömine",
+   "kat": "Şömine",
+   "video": "https://assets.mixkit.co/videos/30252/30252-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/30252/30252-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Firewood burning in the fireplace",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2653/2653-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m25027",
+   "ad": "Kor ve alev",
+   "kat": "Şömine",
+   "video": "https://assets.mixkit.co/videos/25027/25027-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/25027/25027-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Burning logs and flames",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2653/2653-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m22834",
+   "ad": "Ocakta yanan odunlar",
+   "kat": "Şömine",
+   "video": "https://assets.mixkit.co/videos/22834/22834-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/22834/22834-thumb-720-3.jpg",
+   "kaynak": "Mixkit · Wooden logs burning in a pit",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2653/2653-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m47818",
+   "ad": "Ormanda kamp ateşi",
+   "kat": "Şömine",
+   "video": "https://assets.mixkit.co/videos/47818/47818-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/47818/47818-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Campfire in the woods at night",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2653/2653-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m31352",
+   "ad": "Gece şenlik ateşi",
+   "kat": "Şömine",
+   "video": "https://assets.mixkit.co/videos/31352/31352-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/31352/31352-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Big bonfire burning in the night",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2653/2653-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m2846",
+   "ad": "Cama vuran yağmur",
+   "kat": "Yağmur",
+   "video": "https://assets.mixkit.co/videos/2846/2846-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/2846/2846-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Window on a rainy day",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/1249/1249-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m20311",
+   "ad": "Araba camında yağmur",
+   "kat": "Yağmur",
+   "video": "https://assets.mixkit.co/videos/20311/20311-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/20311/20311-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Rain falling on a car window",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2431/2431-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m28085",
+   "ad": "Açık pencereden sağanak",
+   "kat": "Yağmur",
+   "video": "https://assets.mixkit.co/videos/28085/28085-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/28085/28085-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Heavy rain from an open window",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/1253/1253-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m18312",
+   "ad": "Göle düşen damlalar",
+   "kat": "Yağmur",
+   "video": "https://assets.mixkit.co/videos/18312/18312-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/18312/18312-thumb-720-1.jpg",
+   "kaynak": "Mixkit · Rain falling on the water of a lake seen up close",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2678/2678-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m6890",
+   "ad": "Yağmurlu orman",
+   "kat": "Yağmur",
+   "video": "https://assets.mixkit.co/videos/6890/6890-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/6890/6890-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Forest under a tropical rain",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2678/2678-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m25375",
+   "ad": "Güneşli yağmur",
+   "kat": "Yağmur",
+   "video": "https://assets.mixkit.co/videos/25375/25375-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/25375/25375-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Soft rain and sun shine",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2397/2397-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m100417",
+   "ad": "Yağmurlu gece parkı",
+   "kat": "Yağmur",
+   "video": "https://assets.mixkit.co/active_storage/video_items/100417/1724199603/100417-video-720.mp4",
+   "resim": "https://assets.mixkit.co/active_storage/video_items/100417/1724199603/100417-video-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Nighttime park with illuminated streetlights and trees",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2397/2397-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m3371",
+   "ad": "Karlı tepeler",
+   "kat": "Kar",
+   "video": "https://assets.mixkit.co/videos/3371/3371-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/3371/3371-thumb-720-1.jpg",
+   "kaynak": "Mixkit · Snowy hills with clouds",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/1157/1157-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m28844",
+   "ad": "Karlı dağda gün batımı",
+   "kat": "Kar",
+   "video": "https://assets.mixkit.co/videos/28844/28844-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/28844/28844-thumb-720-4.jpg",
+   "kaynak": "Mixkit · Sunset over a snowy winter mountain",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/1157/1157-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m4283",
+   "ad": "Alplerde kar",
+   "kat": "Kar",
+   "video": "https://assets.mixkit.co/videos/4283/4283-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/4283/4283-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Swiss Alps snow background time-lapse",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/1157/1157-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m48919",
+   "ad": "Mum ışığı",
+   "kat": "Mum",
+   "video": "https://assets.mixkit.co/videos/48919/48919-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/48919/48919-thumb-720-3.jpg",
+   "kaynak": "Mixkit · Candle flame on black background closeup",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/1345/1345-preview.mp3",
+   "sesSeviye": 0.35
+  },
+  {
+   "id": "m17426",
+   "ad": "Karanlıkta mumlar",
+   "kat": "Mum",
+   "video": "https://assets.mixkit.co/videos/17426/17426-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/17426/17426-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Candles in the dark",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/1345/1345-preview.mp3",
+   "sesSeviye": 0.35
+  },
+  {
+   "id": "m45315",
+   "ad": "Yosunlu şelale",
+   "kat": "Su ve doğa",
+   "video": "https://assets.mixkit.co/videos/45315/45315-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/45315/45315-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Waterfall with greenery and moss",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2450/2450-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m18162",
+   "ad": "Ormanda dere",
+   "kat": "Su ve doğa",
+   "video": "https://assets.mixkit.co/videos/18162/18162-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/18162/18162-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Little rocky river in the woods",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2456/2456-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m51662",
+   "ad": "Şafakta sakin dere",
+   "kat": "Su ve doğa",
+   "video": "https://assets.mixkit.co/videos/51662/51662-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/51662/51662-thumb-720-0.jpg",
+   "kaynak": "Mixkit · A picturesque small creek with calm waters and steam at dawn",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/2456/2456-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m45239",
+   "ad": "Fırtınada deniz feneri",
+   "kat": "Su ve doğa",
+   "video": "https://assets.mixkit.co/videos/45239/45239-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/45239/45239-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Large waves crashing on the shore as a storm brews out to sea ",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/1194/1194-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m4148",
+   "ad": "Samanyolu",
+   "kat": "Gece",
+   "video": "https://assets.mixkit.co/videos/4148/4148-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/4148/4148-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Milky way seen at night",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/1227/1227-preview.mp3",
+   "sesSeviye": 0.8
+  },
+  {
+   "id": "m4433",
+   "ad": "Dolunay",
+   "kat": "Gece",
+   "video": "https://assets.mixkit.co/videos/4433/4433-720.mp4",
+   "resim": "https://assets.mixkit.co/videos/4433/4433-thumb-720-0.jpg",
+   "kaynak": "Mixkit · Full moon with a soft haze",
+   "ses": "https://assets.mixkit.co/active_storage/sfx/1227/1227-preview.mp3",
+   "sesSeviye": 0.8
+  }
+ ]
+}

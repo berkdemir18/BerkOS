@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/kok"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0A09"
+    android:clipChildren="false">
+
+    <ImageView
+        android:id="@+id/duvarA"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/duvarB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:id="@+id/perde"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/perde" />
+
+    <!-- Aşağı inince tablo biraz kararır ama görünmeye devam eder -->
+    <View
+        android:id="@+id/sayfaPerdesi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="#66000000" />
+
+    <View
+        android:id="@+id/gecePerdesi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="#000000" />
+
+    <!-- Ambilight: üstüne gelinen uygulamanın renginde arkadan vuran ışık -->
+    <FrameLayout
+        android:id="@+id/isikKatmani"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false" />
+
+    <!-- Sakin hâlde odak burada durur (görünmez); aşağı basınca dock'a iner -->
+    <View
+        android:id="@+id/vitrin"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_gravity="top|center_horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <!-- Sakin hâl, sol üst: saat, altında hava, altında 4 büyüklerin maçları -->
+    <LinearLayout
+        android:id="@+id/solUst"
+        android:layout_width="wrap_content"
+        android:clipChildren="false"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/selam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/saat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false" />
+
+
+        <TextView
+            android:id="@+id/ezanKalan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Sakin hâl, sağ üst: tarih -->
+    <LinearLayout
+        android:id="@+id/sagUst"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="56dp"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tarih"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:id="@+id/tarihGun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.demir.salon.HavaIkonu
+                android:id="@+id/havaIkon"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:id="@+id/sicaklik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/havaAciklama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/havaDetay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Maç kartları: hava durumunun altında -->
+        <LinearLayout
+            android:id="@+id/ezanSatiri"
+            android:layout_width="wrap_content"
+            android:clipChildren="false"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_gravity="end"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:id="@+id/tahminSatiri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+    <!-- Duvardaki eserin künyesi -->
+    <LinearLayout
+        android:id="@+id/plakaKutusu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="176dp"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/plakaAd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/plakaAlt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- Kayan sayfa: sakin hâlde sadece dock altta görünür; aşağı indikçe satırlar üst çubuğun altına kayar -->
+    <com.demir.salon.Sayfa
+        android:id="@+id/sayfa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="true"
+        android:overScrollMode="never"
+        android:paddingTop="@dimen/ust_cubuk"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/sayfaIc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="420dp">
+
+            <View
+                android:id="@+id/bosluk"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <TextView
+                android:id="@+id/odakAdi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Cam şerit: solda kayan uygulamalar, sağ uçta sabit "Tüm uygulamalar" ve "Ayarlar" -->
+            <FrameLayout
+                android:id="@+id/dockKutu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:padding="10dp">
+
+                <!-- Ambilight: odaklanan uygulamanın rengi camın içinde, kutunun etrafına yayılır -->
+                <com.demir.salon.IsikKatmani
+                    android:id="@+id/dockIsik"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipChildren="false"
+                    android:layout_margin="-10dp" />
+
+                <com.demir.salon.Serit
+                    android:id="@+id/dockKaydirma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:padding="6dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/dock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal" />
+                </com.demir.salon.Serit>
+
+                <LinearLayout
+                    android:id="@+id/dugmeler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:padding="6dp" />
+            </FrameLayout>
+
+            <!-- İzlemeye devam et, YouTube, Netflix... -->
+            <LinearLayout
+                android:id="@+id/raflar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingHorizontal="56dp" />
+        </LinearLayout>
+    </com.demir.salon.Sayfa>
+
+    <!-- Satırların altı ekranın dibinde yumuşakça kararsın (kayan kenar solgunluğu her karede katman açıyordu; bu durağan) -->
+    <View
+        android:id="@+id/altSolma"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:alpha="0" />
+
+    <!-- Aşağı inince: üst çubuk. Solda saat ve hemen yanında ezan vakitleri, sağda hava -->
+    <FrameLayout
+        android:id="@+id/ustCubuk"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ust_cubuk"
+        android:alpha="0">
+
+        <LinearLayout
+            android:id="@+id/cubukSol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="22dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="24dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="26dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/cSaat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="22dp"
+                android:background="#40FFFFFF" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/cEzanSatiri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+
+                <TextView
+                    android:id="@+id/cEzanKalan"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cubukSag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="10dp">
+
+            <com.demir.salon.HavaIkonu
+                android:id="@+id/cHavaIkon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:id="@+id/cSicaklik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cHavaAciklama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cHavaDetay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Tüm uygulamalar, seçenek menüleri buraya açılır -->
+    <FrameLayout
+        android:id="@+id/katman"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

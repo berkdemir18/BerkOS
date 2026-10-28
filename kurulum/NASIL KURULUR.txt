@@ -1,0 +1,27 @@
+﻿BERKOS · TV'ye kurulum (bir kere yapılır, 5 dakika)
+
+TV'DE (kumandayla):
+ 1. Ayarlar > Sistem > Hakkında > en alttaki "Android TV OS derlemesi" satırına 7 kez üst üste bas.
+    "Artık geliştiricisiniz" yazar.
+ 2. Ayarlar > Sistem > Geliştirici seçenekleri > "USB hata ayıklama"yı aç.
+    (Bazı yeni TV'lerde bir de "Kablosuz hata ayıklama" vardır, onu da aç.)
+ 3. Ayarlar > Ağ ve İnternet > bağlı olduğun Wi-Fi'ın adına gir, IP adresini bir yere yaz
+    (192.168.1.20 gibi bir şey).
+
+BİLGİSAYARDA (TV ile aynı Wi-Fi'da):
+ 4. Bu klasördeki "BerkOS'u TV'ye Kur.bat" dosyasına çift tıkla, IP'yi yaz, Enter.
+ 5. TV ekranında "USB hata ayıklamaya izin verilsin mi?" çıkarsa:
+    "Bu bilgisayardan her zaman izin ver" kutusunu işaretle, Tamam.
+    Script bağlanamadı derse bir kez daha çalıştır.
+
+Bitti. Artık:
+ - TV açılınca ve Ev tuşuna basınca BerkOS gelir.
+ - TV boşta kalınca tablolar ve uzay fotoğrafları döner.
+   Ne kadar sonra geleceği: TV'de Ayarlar > Sistem > Ortam modu (ya da "Ekran koruyucu").
+
+KUMANDA:
+ - Bir uygulamanın üstünde Tamam'ı basılı tut: sola/sağa taşı, ana ekrandan kaldır.
+ - Dock'un sonundaki dört kare: TV'deki bütün uygulamalar. Orada basılı tutunca "Ana ekrana ekle".
+ - Dişli: duvar resmini değiştir, sergiyi başlat, Google TV'nin eski ekranını aç (10 dakikalığına).
+
+GERİ ALMAK İSTERSEN: "BerkOS'u Kaldir.bat". Google TV eski hâline döner.
