@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.app.Activity
 import android.content.BroadcastReceiver
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
@@ -330,6 +331,7 @@ class MainActivity : Activity() {
         Ag.arkada { val yeni = Koleksiyon.yukle(this); Ag.anada { eserler = yeni } }
         // Perdenin görüntüsü Ev'e dönüşteki hâl olsun (odak şeridin başında).
         kok.postDelayed({ if (hasWindowFocus()) anaEkranGoruntusu() }, 1_500)
+        kok.postDelayed({ yardimciSor() }, 2_500)
         alicikaydet(saatAlici, IntentFilter().apply {
             addAction(Intent.ACTION_TIME_TICK)
             addAction(Intent.ACTION_TIME_CHANGED)
@@ -1739,9 +1741,7 @@ class MainActivity : Activity() {
             "Duvar resmini değiştir" to { duvarIleri() },
             "Duvar resmi seç" to { duvarSec() },
             "Sergiyi şimdi başlat" to { startActivity(Intent(this, SergiActivity::class.java)) },
-            (if (yardimci) "Ev tuşu yardımcısı: açık" else "Ev tuşu yardımcısını aç") to {
-                runCatching { startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)) }
-            },
+            (if (yardimci) "Ev tuşu yardımcısı: açık" else "Ev tuşu yardımcısını aç") to { yardimciAyari() },
             "Satırları düzenle" to { satirlariDuzenle() },
             "Şehir: ${Salon.konum(this).ad}" to { sehirSec() },
             "Varsayılan ana ekran: ${if (gtvVarsayilan) "Google TV" else "BerkOS"}" to { varsayilanSec() },
@@ -1815,6 +1815,29 @@ class MainActivity : Activity() {
         if (i < sira.size - 1) m += "Aşağı taşı" to { sira.add(i + 1, sira.removeAt(i)); uygula() }
         m += (if (anahtar in gizli) "Göster" else "Gizle") to { if (!gizli.remove(anahtar)) gizli += anahtar; uygula() }
         secenekler(ad, m)
+    }
+
+    /**
+     * Ev tuşu yardımcısı kapalıysa (ilk kurulum, güncelleme sonrası: Android güncellemede kapatıyor) sorar.
+     * Android bu izni uygulamanın kendisinin açmasına izin vermiyor; kullanıcı ayar ekranında bir kez Aç'a basar.
+     * "Şimdi değil" denirse bir gün sormaz.
+     */
+    private fun yardimciSor() {
+        if (!hasWindowFocus() || katmanYigini.isNotEmpty() || evTusuYardimcisiAcik()) return
+        val p = Salon.ayarlar(this)
+        if (System.currentTimeMillis() - p.getLong("yardimci_soruldu", 0) < 24 * 60 * 60_000L) return
+        p.edit().putLong("yardimci_soruldu", System.currentTimeMillis()).apply()
+        secenekler("Ev tuşu BerkOS'u açsın mı?", listOf(
+            "Aç" to { yardimciAyari() },
+            "Şimdi değil" to { },
+        ), dipnot = "Açılan ekranda \"BerkOS · Ev tuşu yardımcısı\"nı seçip Aç'a bas. TV açılınca ve Ev tuşunda BerkOS gelir.")
+    }
+
+    /** Ayar ekranını mümkünse doğrudan yardımcının kendi anahtarında açar; TV desteklemiyorsa erişilebilirlik listesinde. */
+    private fun yardimciAyari() {
+        val ayrinti = Intent("android.settings.ACCESSIBILITY_DETAILS_SETTINGS")
+            .putExtra(Intent.EXTRA_COMPONENT_NAME, ComponentName(this, EvTusuServisi::class.java).flattenToString())
+        runCatching { startActivity(ayrinti) }.onFailure { runCatching { startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)) } }
     }
 
     private fun evTusuYardimcisiAcik(): Boolean {
