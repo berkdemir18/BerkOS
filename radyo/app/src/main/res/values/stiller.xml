@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Radyo" parent="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:colorAccent">#E3BC78</item>
+        <item name="android:spotShadowAlpha">0.55</item>
+        <item name="android:ambientShadowAlpha">0.22</item>
+    </style>
+</resources>

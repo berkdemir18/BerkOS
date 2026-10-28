@@ -7,7 +7,7 @@
 <meta name="description" content="BerkOS, Google TV'nin reklam dolu ana ekranı yerine saat, hava, maçlar ve tablolarla gelen sakin bir ana ekran. Ücretsiz, hesap istemez.">
 <meta property="og:title" content="BerkOS — televizyonun ana ekranı, sakin hâliyle">
 <meta property="og:description" content="Saat, hava, maçlar, kaldığın yer ve boşta dönen tablolar. Google TV için ücretsiz ana ekran.">
-<meta property="og:image" content="https://berkdemir18.github.io/berkos/img/og.jpg">
+<meta property="og:image" content="https://berkdemir18.github.io/BerkOS/img/og.jpg">
 <meta name="theme-color" content="#120F0C">
 <link rel="icon" href="img/ikon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,6 +97,13 @@ h2 em{color:var(--pirinc2)}
 .sergi-alt b{font-family:var(--serif);font-weight:400;font-size:44px;color:var(--pirinc2);display:block;line-height:1}
 .sergi-alt span{color:var(--soluk);font-size:15px}
 
+/* radyo */
+.radyo{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;background:var(--zemin2);border:1px solid var(--cizgi);border-radius:20px;padding:56px}
+.radyo-logo{display:flex;align-items:center;gap:22px;justify-content:center;padding:40px 0;border-radius:16px;background:radial-gradient(70% 90% at 30% 20%,#2c231a,#120f0c 75%)}
+.radyo-logo img{height:110px}
+.radyo-logo .dalga{height:96px;width:58px}
+.radyo-logo span{font-family:var(--serif);font-style:italic;font-size:64px;line-height:1;color:var(--murekkep)}
+
 /* kurulum */
 .adimlar{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:a}
 .adim{background:var(--zemin2);border:1px solid var(--cizgi);border-radius:16px;padding:30px 28px;counter-increment:a}
@@ -133,7 +140,9 @@ footer .gen{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;b
   .bas,.ikili,.ikili.ters{grid-template-columns:1fr;gap:28px}
   .ikili.ters .gorsel{order:0}
   .bas p{justify-self:start}
-  .izgara,.adimlar,.sergi-alt{grid-template-columns:1fr}
+  .izgara,.adimlar,.sergi-alt,.radyo{grid-template-columns:1fr}
+  .radyo{padding:28px;gap:28px}
+  .radyo-logo span{font-size:48px}.radyo-logo img{height:80px}
   section{padding-top:88px}
   .sergi{min-height:420px}
   .sergi .icerik{padding:28px}
@@ -153,6 +162,7 @@ footer .gen{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;b
     <nav>
       <a class="gizle" href="#neler">Neler var</a>
       <a class="gizle" href="#sergi">Sergi</a>
+      <a class="gizle" href="#radyo">Radyo</a>
       <a href="#kurulum">Kurulum</a>
       <a class="dugme ana" href="#indir">İndir</a>
     </nav>
@@ -240,6 +250,24 @@ footer .gen{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;b
     </div>
   </section>
 
+  <section id="radyo" class="gen">
+    <div class="radyo belir">
+      <div class="radyo-logo" aria-hidden="true"><img src="img/logo.svg" alt=""><svg class="dalga" viewBox="0 0 60 100" aria-hidden="true"><g fill="none" stroke="#E3BC78" stroke-width="7" stroke-linecap="round"><path d="M8 38 A16 16 0 0 1 8 62"/><path d="M22 26 A30 30 0 0 1 22 74" opacity=".75"/><path d="M36 14 A44 44 0 0 1 36 86" opacity=".5"/></g></svg><span>Radyo</span></div>
+      <div class="yazi">
+        <div class="ufak">Yanında gelir</div>
+        <h3>557 Türk radyosu, eski usul bir kadranla.</h3>
+        <p>BerkOS Radyo ayrı bir uygulama, kurulum paketiyle birlikte gelir. Ana ekrandaki eski radyoya basınca son dinlediğin istasyon çalar; ekranı kapatsan da arkada çalmaya devam eder.</p>
+        <ul>
+          <li>Popüler, Türkü & Halk, Sanat & Nostalji, Arabesk, Pop, Haber & Spor, Dini, Yabancı & Caz</li>
+          <li>Tamam'ı basılı tut, favorilere ekle</li>
+          <li>Kumandanın kanal ve medya tuşlarıyla istasyon değiştir</li>
+          <li>Uyku zamanlayıcısı: 15, 30, 60 ya da 90 dakika</li>
+          <li>Yayın adresi değişen radyonun yenisini kendisi bulur</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="kurulum" class="gen">
     <div class="bas belir">
       <h2>Kurulum, <em>beş dakika.</em></h2>
@@ -265,10 +293,11 @@ footer .gen{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;b
     <div class="indir belir" id="indir">
       <img src="img/logo.svg" alt="BerkOS logosu">
       <h2>Kumandayı al, <em>dene.</em></h2>
-      <p>BerkOS 1.1 · APK + kurulum paketi · Android TV 8+</p>
+      <p>BerkOS 1.1 + Radyo · kurulum paketi ikisini birden kurar · Android TV 8+</p>
       <div class="dugmeler" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a class="dugme ana" href="https://github.com/berkdemir18/berkos/releases/latest/download/BerkOS-Kurulum.zip">Kurulum paketini indir</a>
-        <a class="dugme ikinci" href="https://github.com/berkdemir18/berkos/releases/latest/download/BerkOS.apk">Sadece APK</a>
+        <a class="dugme ana" href="https://github.com/berkdemir18/BerkOS/releases/latest/download/BerkOS-Kurulum.zip">Kurulum paketini indir</a>
+        <a class="dugme ikinci" href="https://github.com/berkdemir18/BerkOS/releases/latest/download/BerkOS.apk">Sadece BerkOS APK</a>
+        <a class="dugme ikinci" href="https://github.com/berkdemir18/BerkOS/releases/latest/download/BerkOS-Radyo.apk">Sadece Radyo APK</a>
       </div>
     </div>
   </div>
@@ -276,7 +305,7 @@ footer .gen{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;b
 
 <footer>
   <div class="gen">
-    <span>BerkOS · <a href="https://github.com/berkdemir18/berkos">Kaynak kod</a></span>
+    <span>BerkOS · <a href="https://github.com/berkdemir18/BerkOS">Kaynak kod</a></span>
     <span>Tablolar kamu malı (Wikimedia Commons, NASA). Uygulama logoları sahiplerine aittir.</span>
   </div>
 </footer>

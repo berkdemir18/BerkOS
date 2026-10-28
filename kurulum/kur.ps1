@@ -57,6 +57,14 @@ Baslik "2/5  BerkOS yükleniyor"
 $y = & $adb install -r $apk 2>&1 | Out-String
 if ($y -match "Success") { Tamam "Yüklendi" } else { Hata $y.Trim(); Read-Host "   Kapatmak için Enter"; exit 1 }
 
+# Klasörde Radyo APK'sı da varsa (herkese açık pakette BerkOS-Radyo.apk) onu da kur; ana ekrandaki eski radyo onu çalar.
+$radyo = Get-ChildItem $burasi -Filter "*Radyo*.apk" | Select-Object -First 1
+if ($radyo) {
+    Baslik "+    Radyo yükleniyor"
+    $r = & $adb install -r $radyo.FullName 2>&1 | Out-String
+    if ($r -match "Success") { Tamam "Radyo yüklendi" } else { Hata $r.Trim() }
+}
+
 Baslik "3/5  Ekran koruyucu (bekleme ekranı) BerkOS Sergisi yapılıyor"
 & $adb shell settings put secure screensaver_components "$paket/$sinif.SalonDream"
 & $adb shell settings put secure screensaver_enabled 1
